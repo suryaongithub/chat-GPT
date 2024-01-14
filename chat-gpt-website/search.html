@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ... other head elements ... -->
+    <title>Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333942; /* Dark background */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #top-bar {
+            background-color: #333942; /* Dark background */
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: fixed; /* Make sure it's on top of other elements */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #googol-heading {
+            font-size: 200px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        #search-container {
+            align-items: center; /* Center horizontally */
+            justify-content: space-between;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        #search {
+            padding: 12px;
+            width: calc(100% - 80px); /* Adjusted width */
+            border: none;
+            border-radius: 24px; /* Rounded corners */
+            margin-right: 10px; /* Adjusted right margin */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        #search-btn {
+            background-color: #84ad8f; /* Google Green */
+            color: white;
+            padding: 12px 20px; /* Adjusted padding */
+            border: none;
+            border-radius: 24px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            padding-top: 17px;
+        }
+
+        #search-btn:hover {
+            background-color: #758678; /* Darker green on hover */
+        }
+
+        #content {
+            margin-top: 160px; /* Adjust this value based on the height of your top bar */
+        }
+
+        a { color: inherit;
+            text-decoration:none;
+        } 
+
+        /* Additional styles for search functionality */
+    </style>
+</head>
+
+<body>
+    <div id="top-bar">
+        <div id="search-container">
+            <div id="googol-heading"><a href="./index.html">Googol</a></div>
+            <input type="text" id="search" name="search" placeholder="Search Googol...">
+            <button id="search-btn" onclick="performSearch(search)"></button>
+        
+        </div>
+    </div>
+
+    <div id="content">
+        <!-- Content related to search functionality -->
+    </div>
+
+    <script>
+        function performSearch() {
+            alert("Searching for " + document.getElementById("search").value);
+            // Add your search functionality here
+        }
+    </script>
+</body>
+
+</html>

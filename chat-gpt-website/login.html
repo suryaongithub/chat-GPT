@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffdddd; /* Light red background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            background-color: rgba(255, 255, 204, 0.6); /* Light yellow tint */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out; /* Added transition */
+        }
+
+        .login-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            display: block;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .login-container input,
+        .login-container select {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .login-container input:focus,
+        .login-container select:focus {
+            border-color: #4caf50;
+        }
+
+        .login-container button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        #step2 {
+            opacity: 0; /* Start with opacity 0 */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container" id="step1">
+        <h1>Googol</h1>
+        <form action="#" method="post" id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" class="next-button" onclick="nextStep()">Next &#8594;</button>
+        </form>
+    </div>
+
+    <div class="login-container" id="step2">
+        <h1>Googol</h1>
+        <form action="#" method="post" id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function nextStep() {
+            var step1 = document.getElementById('step1');
+            var step2 = document.getElementById('step2');
+
+            step1.style.opacity = '0';
+
+            setTimeout(function () {
+                step1.style.display = 'none';
+                step2.style.display = 'block';
+                step2.style.opacity = '1';
+            }, 500); // Set the timeout to match the transition duration (500ms in this case)
+        }
+    </script>
+</body>
+
+</html>

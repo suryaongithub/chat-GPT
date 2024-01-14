@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffdddd; /* Light red background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #top-section,
+        #bottom-section,
+        #login-section {
+            max-width: 400px;
+            width: 100%;
+            background-color: rgba(255, 255, 204, 0.6); /* Light yellow tint */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out; /* Added transition */
+            margin-bottom: 20px;
+        }
+
+        #top-section h1,
+        #bottom-section h1,
+        #login-section h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #top-section button,
+        #bottom-section button,
+        #login-section button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        #top-section button:hover,
+        #bottom-section button:hover,
+        #login-section button:hover {
+            background-color: #45a049;
+        }
+
+        #login-section form {
+            opacity: 0; /* Start with opacity 0 */
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out; /* Added transition */
+        }
+
+        #login-section form.active {
+            opacity: 1;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content">
+        <div id="top-section">
+            <h1>Welcome to Googol</h1>
+            <button onclick="showLogin()">Login</button>
+            <button id="search-btn" onclick="performSearch()">Search</button>
+        </div>
+
+        <div id="bottom-section">
+            <h1>About Us</h1>
+            <p>Welcome to Googol, your favorite online platform for all things related to coffee, coding, and creativity. Our team is passionate about providing a delightful experience for you. Join us on this journey!</p>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            window.location.replace("./login.html");
+        }
+
+        function performSearch() {
+            
+            window.location.replace("./search.html");
+        }
+    </script>
+</body>
+
+</html>
